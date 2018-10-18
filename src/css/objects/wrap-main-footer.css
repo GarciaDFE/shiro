@@ -1,0 +1,6 @@
+.wrap-main-footer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--color-bgDark);
+    padding: 0.5em;
+}

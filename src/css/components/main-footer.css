@@ -1,0 +1,14 @@
+.main-footer {
+    width: 100%;
+    font-size: 0.7em;
+    font-weight: 400;
+    color: var(--color-qua);
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.main-footer .copyright {
+    font-size: 1em;
+    font-weight: 400;
+}

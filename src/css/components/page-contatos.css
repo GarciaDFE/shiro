@@ -1,0 +1,82 @@
+.page-contatos .title,
+.page-contatos .subtitle,
+.page-contatos .description {
+    opacity: 0.8;
+}
+
+.page-contatos .title {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.page-contatos .wrap-form .title {
+    text-align: center;
+    margin: 0 10px;
+    padding: 50px 0 0 0;
+    background-color: var(--color-bgClean2);
+}
+
+.page-contatos .subtitle {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 2em;
+    text-align: center;
+}
+
+.page-contatos .description {
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 2em;
+    text-align: center;
+}
+
+.page-contatos .social {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.page-contatos .link[href*="facebook"] {
+    width: 10px;
+    background-image: url(../../img/facebookPositivo.svg);
+}
+.page-contatos .link[href*="youtube"] {
+    width: 20px;
+    background-image: url(../../img/youtubePositivo.svg);
+}
+.page-contatos .link[href*="email"] {
+    width: 15px;
+    background-image: url(../../img/emailPositivo.svg);
+}
+.page-contatos .link {
+    display: block;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+}
+.page-contatos .link:last-child {
+    margin: 0 5px;
+}
+
+@media (min-width: 768px) {
+    .page-contatos .row {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+        align-content: flex-start;
+    }
+
+    .page-contatos .wrap-contatos {
+        width: 80%;
+        justify-content: space-around;
+    }
+    .page-contatos .wrap-form .title {
+        margin: 0 70px;
+    }
+    .page-contatos .social {
+        padding-bottom: 50px;
+    }
+
+}

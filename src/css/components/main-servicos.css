@@ -1,0 +1,6 @@
+.main-servicos .col {
+    /* ajusta responsividade sem gerar 
+    barra de rolagem horizontal */
+    margin-right: -2px;
+    margin-left: -2px;
+}

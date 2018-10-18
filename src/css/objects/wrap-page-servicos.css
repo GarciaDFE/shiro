@@ -1,0 +1,7 @@
+.wrap-page-servicos {
+    position: relative;
+    box-sizing: border-box;
+    background-color: var(--color-bgClean1);
+    padding: 70px 0;
+    width: 100%;
+}

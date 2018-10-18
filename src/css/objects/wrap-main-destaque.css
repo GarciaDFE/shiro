@@ -1,0 +1,8 @@
+.wrap-main-destaque {
+    /* exemplo de inclusão de imagem de fundo sob um gradiente ou cor com opacidade no quadro */
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)),url(../../img/imgDestaqueBackground.jpg);
+    
+    background-size: cover; /* fit da imagem no quadro */
+    background-repeat: no-repeat; /* não repetir a imagem */
+    width: 100%;
+}
