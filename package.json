@@ -1,0 +1,28 @@
+{
+  "name": "shiro2gulp",
+  "version": "1.0.0",
+  "description": "Treino básico de Gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GarciaDFE/shiro2gulp.git"
+  },
+  "keywords": [
+    "Shiro",
+    "Gulp",
+    "Marcial",
+    "Frontend"
+  ],
+  "author": "Marcial Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GarciaDFE/shiro2gulp/issues"
+  },
+  "homepage": "https://github.com/GarciaDFE/shiro2gulp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
