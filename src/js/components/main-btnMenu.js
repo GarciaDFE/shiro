@@ -5,14 +5,13 @@ const $btnCloseMenu = document.querySelector(".btnMenuClose");
 function clickBtnOpenMenu() {
 	$menu.classList.add("menu-open");
 	$btnOpenMenu.classList.remove("imgBtnOpen");
-
 	event.preventDefault();
 }
 
 function clickBtnCloseMenu() {
-    $menu.classList.remove("menu-open");
+	$menu.classList.remove("menu-open");
 	$btnOpenMenu.classList.add("imgBtnOpen");
-  	event.preventDefault();
+	event.preventDefault();
 }
 
 $btnOpenMenu.addEventListener("click", clickBtnOpenMenu);

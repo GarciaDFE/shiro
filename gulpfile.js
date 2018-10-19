@@ -1,0 +1,71 @@
+// Importando plugins utilizados no projeto
+const
+    gulp = require("gulp");
+    cssmin = require('gulp-minify-css');
+    concat = require("gulp-concat");
+    rename = require('gulp-rename');
+    uglify = require('gulp-uglify');
+    imagemin = require("gulp-imagemin");
+    htmlmin = require("gulp-htmlmin");
+    runSequence = require("run-sequence");
+
+gulp.task('optimize-css', function () {
+    // minificando/concatenando/renomeando arquivos CSS
+    return gulp.src(['src/css/**/*.css'])
+        .pipe(cssmin())
+        .pipe(concat('style.css'))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task("optimize-js", function() {
+  // minificando/concatenando/renomeando arquivos JS
+  return gulp.src(["src/js/components/main-accordion.js", "src/js/tools/*.js"])
+        .pipe(uglify())
+        .pipe(concat("script.js"))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest("dist/js"));
+});
+
+gulp.task("optimize-img", function () {
+    // Otimizando imagens 
+    return gulp.src("src/img/**/*")
+        .pipe(imagemin())
+        .pipe(gulp.dest("dist/img"));
+});
+
+gulp.task("optimize-html", function() {
+    // Otimizando html
+    return gulp.src("src/*.html")
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        })
+    )
+        .pipe(gulp.dest("dist/"));
+});
+
+gulp.task("copy", function() {
+  // Cópias sem otimização
+    return gulp.src(["src/js/components/main-btnMenu.js"])
+    .pipe(gulp.dest("dist/js"));
+});
+
+
+gulp.task('default', function (done) {
+    // Task que será executada quando dermos o comando "gulp"
+    runSequence(
+        "optimize-css",
+        "optimize-js",
+        "optimize-img",
+        "optimize-html",
+        "copy",
+      function() {
+        done();
+      }
+    );
+
+});
