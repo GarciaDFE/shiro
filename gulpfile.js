@@ -6,7 +6,7 @@ const
     rename = require('gulp-rename');
     uglify = require('gulp-uglify');
     imagemin = require("gulp-imagemin");
-    htmllinks = require("gul-replace");
+    htmlreplace = require("gulp-html-replace");
     htmlmin = require("gulp-htmlmin");
     netlify = require("gulp-netlify");
     runSequence = require("run-sequence");
@@ -41,19 +41,21 @@ gulp.task("optimize-img", function () {
 });
 
 gulp.task("replace-html", function () {
-    // renomeando links minificados carregados no html
-    return gulp.src("src/*.html")
-        .pipe(replace("styles.css","styles.min.css"))
+    // renomeando links de css e js minificados carregados no html
+    return gulp.src(["src/*.html"])
+        .pipe(htmlreplace({
+            "allcss": "css/styles.min.css",
+            "alljs": "js/script.min.js"
+        }))
         .pipe(gulp.dest("dist/"));
 });
 
 gulp.task("optimize-html", function() {
     // Otimizando html
-    return gulp.src("src/*.html")
+    return gulp.src(["src/*.html"])
         .pipe(htmlmin({
             collapseWhitespace: true
-        })
-    )
+        }))
         .pipe(gulp.dest("dist/"));
 });
 
@@ -89,3 +91,5 @@ gulp.task('default', function (done) {
     );
 
 });
+
+//PROBLEMA: TANTO A OTIMIZAÇÃO QUANTO O REPLACE ESTÃO PEGANDO OS ORIGINAIS DO MESMO LUGAR, SEMPRE SOBREPONDO UMA DAS TAREFAS. NECESSÁRIO QUE UMA DAS TAREFAS SEJA FEITO DIRETO NA PAST DE `DIST`//
