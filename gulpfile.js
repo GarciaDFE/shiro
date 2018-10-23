@@ -6,6 +6,7 @@ const
     rename = require('gulp-rename');
     uglify = require('gulp-uglify');
     imagemin = require("gulp-imagemin");
+    htmllinks = require("gul-replace");
     htmlmin = require("gulp-htmlmin");
     netlify = require("gulp-netlify");
     runSequence = require("run-sequence");
@@ -37,6 +38,13 @@ gulp.task("optimize-img", function () {
     return gulp.src("src/img/**/*")
         .pipe(imagemin())
         .pipe(gulp.dest("dist/img"));
+});
+
+gulp.task("replace-html", function () {
+    // renomeando links minificados carregados no html
+    return gulp.src("src/*.html")
+        .pipe(replace("styles.css","styles.min.css"))
+        .pipe(gulp.dest("dist/"));
 });
 
 gulp.task("optimize-html", function() {
@@ -71,6 +79,7 @@ gulp.task('default', function (done) {
         "optimize-css",
         "optimize-js",
         "optimize-img",
+        "replace-html",
         "optimize-html",
         "copy",
         "deploy",
