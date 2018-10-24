@@ -52,7 +52,8 @@ gulp.task("replace-html", function () {
     return gulp.src(["src/*.html"])
         .pipe(htmlreplace({
             "allcss": "css/styles.min.css",
-            "alljs": "js/scripts.min.js"
+            "alljs": "js/scripts.min.js",
+            "sobtnmenu": "js/main-btnMenu.js",
         }))
         .pipe(gulp.dest("dist/"));
 });
@@ -74,13 +75,6 @@ gulp.task("copy", function() {
                 .pipe(gulp.dest("dist/font"));
 });
 
-/*
-gulp.task("copyfont", function () {
-    // Cópias de arquivos de fontes
-    return gulp.src(["src/font/*"])
-        .pipe(gulp.dest("dist/font"));
-});*/
-
 gulp.task("deploy", function() {
     // deploy no Netlify
     return gulp.src("dist/*")
@@ -94,30 +88,16 @@ gulp.task("deploy", function() {
 gulp.task('default', function (done) {
     // Task que será executada quando dermos o comando "gulp"
     runSequence(
-        "optimize-css",
-        "replace-css",
-        "optimize-js",
-        "optimize-img",
-        "replace-html",
-        "copy",
-        function() {
-            done();
-        }
-    );
-});
-
-/*
-    runSequence(
-        "optimize-css",
-        "optimize-js",
-        "optimize-img",
-        "replace-html",
-        "optimize-html",
-        "copy",
-        "deploy",
+            "optimize-css",
+            "replace-css",
+            "optimize-js",
+            "optimize-img",
+            "replace-html",
+            "optimize-html",
+            "copy",
+            "deploy",
       function() {
         done();
       }
     );
-
-*/
+});
