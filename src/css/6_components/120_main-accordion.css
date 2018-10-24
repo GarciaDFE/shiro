@@ -1,0 +1,67 @@
+/* Estilo wrap do Accordion */
+.main-accordion {
+    width: 95%;
+    max-width: 900px;
+    border: 1px solid var(--color-pri);
+}
+
+/* Estilo dos botões do Accordion */
+.main-accordion .accordion {
+    background-color: var(--color-qua);
+    border: none;
+    padding: 15px;
+    width: 100%;
+
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    color: var(--color-sec);
+
+    cursor: pointer;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.main-accordion .active, .accordion:hover {
+    color: var(--color-pri);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.main-accordion .panel {
+    max-height: 0;
+    padding: 0 35px;
+
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 2em;
+    letter-spacing: 0.05em;
+    color: var(--color-sec);
+
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.main-accordion .panel:not(:last-child) {
+    border-bottom: 1px solid var(--color-pri);
+}
+
+.main-accordion .accordion::before {
+    content: '\25B6'; /* Unicode character (black right-pointing triangle) */
+    font-size: 12px;
+    float: left;
+    padding-right: 10px;
+}
+
+.panel.accordion.active {
+    padding-bottom: 50px;
+}
+.main-accordion .active::before {
+    content: "\25BC"; /* Unicode character (black down-pointing triangle) */
+    font-size: 12px;
+    float: left;
+    padding-right: 10px;
+}
+.main-accordion .listaBullets {
+    list-style: disc;
+}

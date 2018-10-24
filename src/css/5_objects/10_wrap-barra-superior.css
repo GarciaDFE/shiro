@@ -1,0 +1,8 @@
+.wrap-barra-superior {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: var(--color-bgDark);
+    padding: 0.5em;
+    z-index: 1;
+}

@@ -6,6 +6,7 @@ const
     rename = require('gulp-rename');
     uglify = require('gulp-uglify');
     imagemin = require("gulp-imagemin");
+    replace = require("gulp-replace");
     htmlreplace = require("gulp-html-replace");
     htmlmin = require("gulp-htmlmin");
     netlify = require("gulp-netlify");
@@ -15,18 +16,24 @@ gulp.task('optimize-css', function () {
     // minificando/concatenando/renomeando arquivos CSS
     return gulp.src(['src/css/**/*.css'])
         .pipe(cssmin())
-        .pipe(concat('style.css'))
+        .pipe(concat('styles.css'))
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task("replace-css", function () {
+    // acertando caminhos de links nos arquivos CSS
+    return gulp.src(["dist/css/styles.min.css"])
+            .pipe(replace("(../../", "(../"))
+            .pipe(gulp.dest("dist/css"))});
+
 gulp.task("optimize-js", function() {
   // minificando/concatenando/renomeando arquivos JS
-  return gulp.src(["src/js/components/main-accordion.js", "src/js/tools/*.js"])
+    return gulp.src(["src/js/components/main-accordion.js", "src/js/tools/*.js"])
         .pipe(uglify())
-        .pipe(concat("script.js"))
+        .pipe(concat("scripts.js"))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -45,7 +52,7 @@ gulp.task("replace-html", function () {
     return gulp.src(["src/*.html"])
         .pipe(htmlreplace({
             "allcss": "css/styles.min.css",
-            "alljs": "js/script.min.js"
+            "alljs": "js/scripts.min.js"
         }))
         .pipe(gulp.dest("dist/"));
 });
@@ -60,10 +67,19 @@ gulp.task("optimize-html", function() {
 });
 
 gulp.task("copy", function() {
-  // Cópias sem otimização
-    return gulp.src(["src/js/components/main-btnMenu.js"])
-    .pipe(gulp.dest("dist/js"));
+  // Cópias de arquivos JS sem otimização
+    return  gulp.src(["src/js/components/main-btnMenu.js"])
+                .pipe(gulp.dest("dist/js")),
+            gulp.src(["src/font/*"])
+                .pipe(gulp.dest("dist/font"));
 });
+
+/*
+gulp.task("copyfont", function () {
+    // Cópias de arquivos de fontes
+    return gulp.src(["src/font/*"])
+        .pipe(gulp.dest("dist/font"));
+});*/
 
 gulp.task("deploy", function() {
     // deploy no Netlify
@@ -79,6 +95,20 @@ gulp.task('default', function (done) {
     // Task que será executada quando dermos o comando "gulp"
     runSequence(
         "optimize-css",
+        "replace-css",
+        "optimize-js",
+        "optimize-img",
+        "replace-html",
+        "copy",
+        function() {
+            done();
+        }
+    );
+});
+
+/*
+    runSequence(
+        "optimize-css",
         "optimize-js",
         "optimize-img",
         "replace-html",
@@ -90,4 +120,4 @@ gulp.task('default', function (done) {
       }
     );
 
-});
+*/

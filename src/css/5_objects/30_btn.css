@@ -1,0 +1,25 @@
+.btn {
+    display: inline-block;
+    background-color: var(--color-bgBtnPri);
+    color: var(--color-qua);
+    width: 100px;
+    height: 30px;
+    padding: 0 5px;
+    border-radius: 15px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn a {
+    color: inherit;
+    text-decoration: inherit;}

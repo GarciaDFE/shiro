@@ -1,0 +1,34 @@
+.btnMenuOpen {
+    position: relative;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-right: 5px;
+    right: 0;
+    top: 50%;
+   	transform: translateY(-50%);
+    height: 25px;
+
+    /* ATIVAR ATRIBUTOS PARA TEXTO AO LADO DO BOTÃO
+    font-size: 1em;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    */
+}
+
+.imgBtnOpen {
+    background-image: url(../../img/bars.svg);
+   
+}
+.btnMenuClose {
+    position: relative;
+    display: block;
+    background-image: url(../../img/times.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-right: 20px;
+    text-indent: -9999px;
+}
