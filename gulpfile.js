@@ -9,7 +9,7 @@ const
     replace = require("gulp-replace");
     htmlreplace = require("gulp-html-replace");
     htmlmin = require("gulp-htmlmin");
-    netlify = require("gulp-netlify");
+    /*netlify = require("gulp-netlify");*/
     runSequence = require("run-sequence");
 
 gulp.task('optimize-css', function () {
