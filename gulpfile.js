@@ -52,7 +52,7 @@ gulp.task("replace-html", function () {
 
 gulp.task("optimize-html", function() {
     // Otimizando html
-    return gulp.src(["src/*.html"])
+    return gulp.src(["dist/*.html"])
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
@@ -91,5 +91,3 @@ gulp.task('default', function (done) {
     );
 
 });
-
-//PROBLEMA: TANTO A OTIMIZAÇÃO QUANTO O REPLACE ESTÃO PEGANDO OS ORIGINAIS DO MESMO LUGAR, SEMPRE SOBREPONDO UMA DAS TAREFAS. NECESSÁRIO QUE UMA DAS TAREFAS SEJA FEITO DIRETO NA PAST DE `DIST`//
