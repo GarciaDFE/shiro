@@ -1,4 +1,4 @@
-# shiro2gulp
+# Shiro Usinagens V2
 Mais Treino Front-end
 
 Treinamento auto-didata de Frontend desenvolvendo nova versão do site da Shiro Usinagens, aplicando outros aprendizandos de automatização Gulp e deploy Netlify.
