@@ -2,71 +2,78 @@
     position: relative;
     display: inline-block;
     box-sizing: border-box;
-    margin: 10px auto;
+    margin: 15px auto;
     width: 100%;
-    /*height: 350px; /*==> para cards com tamanho fixo */
+    /*height: 350px; /*==> para cards com altura fixa */
     background-color: #ffffff;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
     padding-bottom: 30px;
     text-align: center;
 }
 
-.card-jobs .title, 
-.card-jobs .subtitle,
-.card-jobs .description {
+.card-jobs > .title, 
+.card-jobs > .subtitle,
+.card-jobs > .description {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
 }
 
-.card-jobs .title {
+.card-jobs > .title {
     font-size: 17px;
     font-weight: 900;
     text-transform: uppercase;
 }
 
-.card-jobs .subtitle {
+.card-jobs > .subtitle {
     color: var(--color-pri);
     font-size: 15px;
     font-weight: 700;
 }
 
-.card-jobs .description {
+.card-jobs > .description {
     font-size: 14px;
     line-height: 1.5em;
     color: var(--color-sec);
 }
 
-.card-jobs .icone { /* pai controlando o tamanho do img  */
+.card-jobs > .icone { /* pai controlando o tamanho do img  */
     margin-bottom: 20px;
 }
 
-.card-jobs .icone img { /* filho com 100 % do tamanho do pai  */
+.card-jobs > .icone img { /* filho com 100 % do tamanho do pai  */
     width: 100%;
 }
 
-.card-jobs .btn {
+.card-jobs > .btn {
     margin-right: 10px;
     margin-top: 10px;
 }
 
-.card-jobs .-btncard {
+.card-jobs > .-btncard {
     background-color: var(--color-bgBtnSec);
     margin-left: 10px;
+}
+
+.card-jobs > .description .-destaque {
+    padding: 5px;
+    background-color: rgb(240, 243, 35);
+    color: var(--color-ter);
 }
 
 
 @media (min-width: 768px) {
     .card-jobs {
+        width: 95%;
         height: 420px;
     }
-    .card-jobs .btn {
+    .card-jobs > .btn {
         position: absolute;
         bottom: 25px;
         transform: translateX(-110%);
     }
-    .card-jobs .-btncard {
+    .card-jobs > .-btncard {
         position: absolute;
         bottom: 25px;
         transform: translateX(0);
@@ -75,14 +82,15 @@
 
 @media (min-width: 1024px) {
     .card-jobs {
+        width: 95%;
         height: 350px;
     }
-    .card-jobs .btn {
+    .card-jobs > .btn {
         position: absolute;
         bottom: 25px;
         transform: translateX(-110%);
     }
-    .card-jobs .-btncard {
+    .card-jobs > .-btncard {
         position: absolute;
         bottom: 25px;
         transform: translateX(0);

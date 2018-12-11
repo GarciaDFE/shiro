@@ -6,8 +6,6 @@
     --color-bgClean1: #FFFFFF;
     --color-bgClean2: rgb(242, 242, 242);
     --color-bgDark: #A00000;
-    --color-bgDarkGradient: linear-gradient(60deg, rgba(160,0,0,1),rgb(80,0,0,1));
-
     --color-bgMenu: rgba(240, 240, 240, 0.98);
     --color-bgBtnPri: rgba(51, 163, 255, 0.9);
     --color-bgBtnSec: rgba(35, 165, 85, 0.9);
