@@ -9,7 +9,6 @@ const
     replace = require("gulp-replace");
     htmlreplace = require("gulp-html-replace");
     htmlmin = require("gulp-htmlmin");
-    /*netlify = require("gulp-netlify");*/
     runSequence = require("run-sequence");
 
 gulp.task('optimize-css', function () {
@@ -74,16 +73,6 @@ gulp.task("copy", function() {
             gulp.src(["src/font/*"])
                 .pipe(gulp.dest("dist/font"));
 });
-/*
-gulp.task("deploy", function() {
-    // deploy no Netlify
-    return gulp.src("dist/*")
-    .pipe(netlify({
-        site_id: "a97af9e6-4d4e-4a77-bd0b-729587e26d9b",
-        access_token: "474d5d8999e72c67105040bd4a37a7eb41ba12eb53a6527045765e71c7280caa"
-    }))
-});*/
-
 
 gulp.task('default', function (done) {
     // Task que será executada quando dermos o comando "gulp"
@@ -95,7 +84,6 @@ gulp.task('default', function (done) {
             "replace-html",
             "optimize-html",
             "copy",
-            /*"deploy",*/
       function() {
         done();
       }
