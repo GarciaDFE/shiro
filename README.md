@@ -1,21 +1,31 @@
-# Shiro Usinagens V2
-Mais Treino Front-end
+# Projeto Shiro Usinagens
 
-Treinamento auto-didata de Frontend desenvolvendo nova versão do site da Shiro Usinagens, aplicando outros aprendizandos de automatização Gulp e deploy Netlify.
+Projeto de criação de website estático para empresa Shiro Usinagens como treinamento e aperfeiçoamento das minhas habilidades como Desenvolvedor Front End.
 
-Utilizando neste treino:
+## Ecosistema do projeto em desenvolvimento:
 
-Codificação: HTML|CSS|JS
+- Codificação &rarr; **HTML | CSS | JS**
+- Metodologias de organização &rarr; **ITCSS e RSCSS**
+- Versionamento &rarr; **Git com GitHub** como repositório remoto
+- Automatização de minificação e otimização &rarr; **Gulp**
+- Deploy &rarr; Netlify
+- Editor de códigos &rarr; **VSCode** com Emmet + extensões
+- Design UI/UX &rarr; Adobe XD | Illustrator | Photoshop
+- Sistema Operacional &rarr; **MacOSX**
 
-Metodologias de organização: ITCSS e RSCSS
+## Novos conhecimentos profissionais adquiridos:
+- Desenvolvimento e apresentação dos **wireframes de baixa e média fidelidade**
+- Criação e apresentação da **programação visual** do projeto
+- Aplicação de metodologia de organização de código CSS com **ITCSS e RSCSS**
+- Desenvolvimento dos códigos utilizando **boas práticas** para facilitar o entendimento e manutenção do projeto
+- Automatização de minificação e otimização dos arquivos do projeto para deploy com **Gulp**
+- Procedimentos de **deploy** usando Netlify
 
-Versionamento: Git com GitHub como repositório
-
-Automatização de minificação e otimização com Gulp
-
-Deploy: Netlify
-
-Editor de códigos: VSCode com Emmet + extensões
-
-Aprendendo e treinando:
-HTML | CSS | JavaScript | ITCSS | RSCSS | Git | Gulp | Deploy
+## Habilidades profissionais aperfeiçoadas:
+- Desenvolvimento de código **HTML semântico**
+- Desenvolvimento de código **CSS**
+- Desenvolvimento de código **Javascript** para tratar comportamentos e animações
+- Versionamento dos arquivos do projeto com **Git** como repositório local e **GitHub** como repositório remoto
+- Design **Mobile first e responsivo**
+- **Criação e edição de gráficos e ilustrações** com Adobe Illustrator
+- **Edição e tratamento de imagens** com Adobe Photoshop
